@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.Data.AccessMemory",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.Data.Accesss.SQL", "Chelsea.Data.Accesss.SQL\Chelsea.Data.Accesss.SQL.csproj", "{C33AACC1-C11C-412F-8FC4-A8B3B7F54205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.uii", "Chelsea.uii\Chelsea.uii.csproj", "{4FF3CD69-A101-4E48-A2D9-4E9ADABB6963}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.ui", "Chelsea.uii\Chelsea.ui.csproj", "{4FF3CD69-A101-4E48-A2D9-4E9ADABB6963}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.uii.Tests", "Chelsea.uii.Tests\Chelsea.uii.Tests.csproj", "{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.ui.Tests", "Chelsea.uii.Tests\Chelsea.ui.Tests.csproj", "{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
