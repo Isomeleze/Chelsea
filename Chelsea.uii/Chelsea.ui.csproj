@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +256,27 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chelsea.core\Chelsea.core.csproj">
+      <Project>{0b57cbd5-6152-462b-b877-bfcb6e44f190}</Project>
+      <Name>Chelsea.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chelsea.Data.AccessMemory\Chelsea.Data.AccessMemory.csproj">
+      <Project>{b1ed69c9-9d55-4766-81c6-adddc1fceb5e}</Project>
+      <Name>Chelsea.Data.AccessMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chelsea.Data.Accesss.SQL\Chelsea.Data.Accesss.SQL.csproj">
+      <Project>{c33aacc1-c11c-412f-8fc4-a8b3b7f54205}</Project>
+      <Name>Chelsea.Data.Accesss.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chelsea.services\Chelsea.services.csproj">
+      <Project>{649ff05c-7c3c-4516-9f08-314e1cc031ab}</Project>
+      <Name>Chelsea.services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
