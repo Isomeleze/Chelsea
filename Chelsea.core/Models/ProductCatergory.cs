@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Chelsea.core.Models
 {
-    internal class ProductCatergory
+    public class ProductCatergory
     {
+
+        public string Id { get; set; }
+        public string Category { get; set; }
+        public ProductCatergory()
+        {
+            this.Id = Guid.NewGuid().ToString();
+
+        }
     }
 }
