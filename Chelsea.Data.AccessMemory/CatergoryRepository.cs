@@ -18,6 +18,7 @@ namespace Chelsea.Data.AccessMemory
             if (categories == null)
             {
                 categories = new List<ProductCatergory>();
+
             }
         }
 
