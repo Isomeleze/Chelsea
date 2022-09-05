@@ -11,7 +11,7 @@ namespace Chelsea.Data.AccessMemory
     public class CatergoryRepository
     {
         ObjectCache cache = MemoryCache.Default;
-        List<ProductCatergory> categories = new List<ProductCatergory>();
+        List<ProductCatergory> categories;
         public CatergoryRepository()
         {
             categories = cache["categories"] as List<ProductCatergory>;

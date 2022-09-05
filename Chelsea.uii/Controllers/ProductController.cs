@@ -16,7 +16,6 @@ namespace Chelsea.uii.Controllers
     public class ProductController : Controller
     {
         ProductRepository context;
-
         public ProductController()
         {
             context = new ProductRepository();
@@ -27,7 +26,11 @@ namespace Chelsea.uii.Controllers
             List<Product> products = context.Collection().ToList();
             return View(products);
         }
-
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(Product product)
         {
             if (!ModelState.IsValid)
@@ -39,13 +42,13 @@ namespace Chelsea.uii.Controllers
                 context.Insert(product);
                 context.Commit();
                 return RedirectToAction("Index");
-
             }
         }
-        public  ActionResult Edit(string Id)
+
+        public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
-            if(product == null)
+            if (product == null)
             {
                 return HttpNotFound();
             }
@@ -58,13 +61,13 @@ namespace Chelsea.uii.Controllers
         public ActionResult Edit(Product product, string Id)
         {
             Product productToEdit = context.Find(Id);
-            if (product == null)
+            if (productToEdit == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     return View(product);
                 }
@@ -77,6 +80,7 @@ namespace Chelsea.uii.Controllers
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
@@ -100,16 +104,11 @@ namespace Chelsea.uii.Controllers
             }
             else
             {
-                context.Delete("Index");
+                context.Delete(Id);
                 return RedirectToAction("Index");
             }
         }
-        
-            
     }
-       
-
-  
 }
 
-    
+
