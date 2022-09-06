@@ -13,11 +13,11 @@ namespace Chelsea.uii.Controllers
     public class ProductController : Controller
     {
         ProductRepository context;
-        CatergoryRepository productCategories;
+        CatergoryRepository productCatergories;
         public ProductController()
         {
             context = new ProductRepository();
-            productCategories = new CatergoryRepository();
+            productCatergories = new CatergoryRepository();
         }
         // GET: Product
         public ActionResult Index()
@@ -28,10 +28,10 @@ namespace Chelsea.uii.Controllers
         public ActionResult Create()
         {
             return View();
-            ProductVM viewModel = new ProductVM();
-            viewModel.Product = new Product();
-            viewModel.ProductCatergories = productCategories.Collection();
-            return View(viewModel);
+            ProductVM viewMode1 = new ProductVM();
+            viewMode1.Product = new Product();
+            viewMode1.ProductCatergories = productCatergories.Collection();
+            return View(viewMode1);
         }
         [HttpPost]
         public ActionResult Create(Product product)
@@ -59,7 +59,7 @@ namespace Chelsea.uii.Controllers
                 return View(product);
                 ProductVM viewModel = new ProductVM();
                 viewModel.Product = product;
-                viewModel.ProductCatergories = productCategories.Collection();
+                viewModel.ProductCatergories = productCatergories.Collection();
                 return View(viewModel);
             }
         }

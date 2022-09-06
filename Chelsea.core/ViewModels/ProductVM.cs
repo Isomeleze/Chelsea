@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chelsea.core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace Chelsea.core.ViewModels
     public class ProductVM
     {
         public Product Product { get; set; }
-        public IEnumerable<ProductCatergory> ProductCategories { get; set; }
+        public IEnumerable<ProductCatergory> ProductCatergories { get; set; }
+        public IQueryable<ProductCatergory> ProductCatergory { get; set; }
     }
 }
     
