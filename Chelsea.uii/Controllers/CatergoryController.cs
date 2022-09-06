@@ -8,97 +8,94 @@ using Chelsea.Data.AccessMemory;
 
 namespace Chelsea.uii.Controllers
 {
-    public class CategoryController : Controller
-    {
-        CatergoryRepository context;
-        public CategoryController()
-        {
-            context = new CatergoryRepository();
-        }
-        // GET: Category
-        public ActionResult Index()
-        {
-            List<ProductCatergory> categories = context.Collection().ToList();
-            return View(categories);
-        }
-        public ActionResult Create()
-        {
-            ProductCatergory productCategory = new ProductCatergory();
-            return View(productCategory);
-        }
-        [HttpPost]
-        public ActionResult Create(ProductCatergory category)
-        {
-            if (!ModelState.IsValid)
+    public class CatergoryController : Controller
+    { 
+            CatergoryRepository context;
+            public CatergoryController()
             {
-                return View(category);
+                context = new CatergoryRepository();
             }
-            else
+            // GET: Catergory
+            public ActionResult Index()
             {
-                context.Insert(category);
-                context.Commit();
-                return RedirectToAction("Index");
+                
+                List<ProductCatergory> catergories = context.Collection().ToList();
+                return View(catergories);
             }
-        }
-
-        public ActionResult Edit(string Id)
-        {
-            ProductCatergory category = context.Find(Id);
-            if (category == null)
+            public ActionResult Create()
             {
-                return HttpNotFound();
+                ProductCatergory productCatergory = new ProductCatergory();
+                return View(productCatergory);
             }
-            else
-            {
-                return View(category);
-            }
-        }
-        [HttpPost]
-        public ActionResult Edit(ProductCatergory category, string Id)
-        {
-            ProductCatergory CategoryToEdit = context.Find(Id);
-            if (CategoryToEdit == null)
-            {
-                return HttpNotFound();
-            }
-            else
+            [HttpPost]
+            public ActionResult Create(ProductCatergory productCatergory)
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(category);
+                    return View(productCatergory);
                 }
-                CategoryToEdit.Category = category.Category;
-                context.Commit();
-                return RedirectToAction("Index");
+                else
+                {
+                    context.Insert(productCatergory);
+                    context.Commit();
+                    return RedirectToAction("Index");
+                }
             }
-        }
 
-        public ActionResult Delete(string Id)
-        {
-            ProductCatergory CategoryToDelete = context.Find(Id);
-            if (CategoryToDelete == null)
+            public ActionResult Edit(string Id)
             {
-                return HttpNotFound();
+                ProductCatergory productCatergory = context.Find(Id);
+                if (productCatergory == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(productCatergory);
+                }
             }
-            else
+            [HttpPost]
+            public ActionResult Edit(ProductCatergory productCatergory, string Id)
             {
-                return View(CategoryToDelete);
+                ProductCatergory CatergoryToEdit = context.Find(Id);
+                if (CatergoryToEdit == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                   CatergoryToEdit.Category = productCatergory.Category;
+                   context.Commit();
+                   return RedirectToAction("Index");
+                }
             }
-        }
-        [HttpPost]
-        [ActionName("Delete")]
-        public ActionResult ConfirmDelete(string Id)
-        {
-            ProductCatergory CategoryToDelete = context.Find(Id);
-            if (CategoryToDelete == null)
+
+            public ActionResult Delete(string Id)
             {
-                return HttpNotFound();
+                ProductCatergory CatergoryToDelete = context.Find(Id);
+                if (CatergoryToDelete == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(CatergoryToDelete);
+                }
             }
-            else
+            [HttpPost]
+            [ActionName("Delete")]
+            public ActionResult ConfirmDelete(string Id)
             {
-                context.Delete(Id);
-                return RedirectToAction("Index");
+                ProductCatergory CatergoryToDelete = context.Find(Id);
+                if (CatergoryToDelete == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    context.Delete(Id);
+                    return RedirectToAction("Index");
+                }
             }
         }
     }
-}

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using Chelsea.core.Models;
+using Chelsea.core.ViewModels;
 using Chelsea.Data.AccessMemory;
-using Microsoft.Ajax.Utilities;
 
 
 namespace Chelsea.uii.Controllers
@@ -16,9 +13,11 @@ namespace Chelsea.uii.Controllers
     public class ProductController : Controller
     {
         ProductRepository context;
+        CatergoryRepository productCategories;
         public ProductController()
         {
             context = new ProductRepository();
+            productCategories = new CatergoryRepository();
         }
         // GET: Product
         public ActionResult Index()
@@ -29,6 +28,10 @@ namespace Chelsea.uii.Controllers
         public ActionResult Create()
         {
             return View();
+            ProductVM viewModel = new ProductVM();
+            viewModel.Product = new Product();
+            viewModel.ProductCatergories = productCategories.Collection();
+            return View(viewModel);
         }
         [HttpPost]
         public ActionResult Create(Product product)
@@ -44,7 +47,6 @@ namespace Chelsea.uii.Controllers
                 return RedirectToAction("Index");
             }
         }
-
         public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
@@ -55,6 +57,10 @@ namespace Chelsea.uii.Controllers
             else
             {
                 return View(product);
+                ProductVM viewModel = new ProductVM();
+                viewModel.Product = product;
+                viewModel.ProductCatergories = productCategories.Collection();
+                return View(viewModel);
             }
         }
         [HttpPost]
@@ -80,7 +86,6 @@ namespace Chelsea.uii.Controllers
                 return RedirectToAction("Index");
             }
         }
-
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
@@ -110,5 +115,3 @@ namespace Chelsea.uii.Controllers
         }
     }
 }
-
-
