@@ -27,11 +27,11 @@ namespace Chelsea.uii.Controllers
         }
         public ActionResult Create()
         {
-            return View();
-            ProductVM viewMode1 = new ProductVM();
-            viewMode1.Product = new Product();
-            viewMode1.ProductCatergories = productCatergories.Collection();
-            return View(viewMode1);
+            
+            ProductVM viewModel = new ProductVM();
+            viewModel.Product = new Product();
+            viewModel.ProductCatergories = productCatergories.Collection();
+            return View(viewModel);
         }
         [HttpPost]
         public ActionResult Create(Product product)
@@ -56,7 +56,7 @@ namespace Chelsea.uii.Controllers
             }
             else
             {
-                return View(product);
+                
                 ProductVM viewModel = new ProductVM();
                 viewModel.Product = product;
                 viewModel.ProductCatergories = productCatergories.Collection();
