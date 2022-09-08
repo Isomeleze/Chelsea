@@ -8,22 +8,19 @@ using System.Threading.Tasks;
 
 namespace Chelsea.core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
 
-        public string Id { get; set; }
+
         [StringLength(25)]
         [DisplayName("""Product Name""")]
         public string Name { get; set; }
         public string Description { get; set; }
-        [Range(0 , 100000)]
+        [Range(0, 100000)]
         public decimal Price { get; set; }
         public string Catergory { get; set; }
         public string Image { get; set; }
-        public Product()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
-    }
 
+    }
 }
+ 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Chelsea.core.Contracts;
 using Chelsea.core.Models;
 using Chelsea.core.ViewModels;
 using Chelsea.Data.AccessMemory;
@@ -12,12 +13,12 @@ namespace Chelsea.uii.Controllers
 {
     public class ProductController : Controller
     {
-        ProductRepository context;
-        CatergoryRepository productCatergories;
-        public ProductController()
+        IRepository<Product> context;
+        IRepository<ProductCatergory> productCatergories;
+        public ProductController(IRepository<Product> productContext, IRepository<ProductCatergory> catergoryContext)
         {
-            context = new ProductRepository();
-            productCatergories = new CatergoryRepository();
+            context = productContext;
+            productCatergories = catergoryContext;
         }
         // GET: Product
         public ActionResult Index()
@@ -115,3 +116,4 @@ namespace Chelsea.uii.Controllers
         }
     }
 }
+

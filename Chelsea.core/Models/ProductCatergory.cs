@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Chelsea.core.Models
 {
-    public class ProductCatergory
+    public class ProductCatergory : BaseEntity
     {
 
-        public string Id { get; set; }
-        public string Category { get; set; }
-        public ProductCatergory()
-        {
-            this.Id = Guid.NewGuid().ToString();
-
-        }
+     
+        public string Catergory { get; set; }
+        
+        
     }
 }

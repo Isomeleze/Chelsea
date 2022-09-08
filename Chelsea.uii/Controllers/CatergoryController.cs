@@ -9,12 +9,14 @@ using Chelsea.Data.AccessMemory;
 namespace Chelsea.uii.Controllers
 {
     public class CatergoryController : Controller
-    { 
-            CatergoryRepository context;
-            public CatergoryController()
-            {
-                context = new CatergoryRepository();
-            }
+    {
+        InMemoryRepository<ProductCatergory> context;
+        public CatergoryController()
+        {
+            context = new InMemoryRepository<ProductCatergory>();
+        }
+
+
             // GET: Catergory
             public ActionResult Index()
             {
@@ -64,7 +66,7 @@ namespace Chelsea.uii.Controllers
                 }
                 else
                 {
-                   CatergoryToEdit.Category = productCatergory.Category;
+                   CatergoryToEdit.Catergory = productCatergory.Catergory;
                    context.Commit();
                    return RedirectToAction("Index");
                 }
