@@ -1,18 +1,17 @@
-﻿using Chelsea.core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chelsea.core.Models;
 
-namespace Chelsea.Data.Accesss.SQL
+namespace X_StateOnline.DataAccess.SQL
 {
-   public class DataContext : DbContext
+    public class DataContext : DbContext
     {
-
         public DataContext()
-           :base("DefaultConnection")
+            : base("DefaultConnection")
         {
 
         }
