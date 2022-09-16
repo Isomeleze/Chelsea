@@ -1,6 +1,7 @@
 using Chelsea.core.Contracts;
 using Chelsea.core.Models;
 using Chelsea.Data.AccessMemory;
+using Chelsea.Data.Accesss.SQL;
 using System;
 
 using Unity;
@@ -45,8 +46,8 @@ namespace Chelsea.uii
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<Product>, InMemoryRepository<Product>>();
-            container.RegisterType<IRepository<ProductCatergory>, InMemoryRepository<ProductCatergory>>();
+            container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
+            container.RegisterType<IRepository<ProductCatergory>, SQLRepository<ProductCatergory>>();
         }
     }
 }

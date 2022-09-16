@@ -10,7 +10,7 @@ using X_StateOnline.DataAccess.SQL;
 
 namespace Chelsea.Data.Accesss.SQL
 {
-    internal class SQLRepository<T> : IRepository<T> where T : BaseEntity
+    public class SQLRepository<T> : IRepository<T> where T : BaseEntity
     {
         internal DataContext context;
         internal DbSet<T> dbSet;

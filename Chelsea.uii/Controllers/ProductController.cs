@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,6 +22,7 @@ namespace Chelsea.uii.Controllers
             productCatergories = catergoryContext;
         }
         // GET: Product
+        // GET: Product
         public ActionResult Index()
         {
             List<Product> products = context.Collection().ToList();
@@ -28,14 +30,13 @@ namespace Chelsea.uii.Controllers
         }
         public ActionResult Create()
         {
-            
             ProductVM viewModel = new ProductVM();
             viewModel.Product = new Product();
             viewModel.ProductCatergories = productCatergories.Collection();
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
@@ -43,11 +44,17 @@ namespace Chelsea.uii.Controllers
             }
             else
             {
+                if (file != null)
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//" + product.Image));
+                }
                 context.Insert(product);
                 context.Commit();
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
@@ -57,7 +64,6 @@ namespace Chelsea.uii.Controllers
             }
             else
             {
-                
                 ProductVM viewModel = new ProductVM();
                 viewModel.Product = product;
                 viewModel.ProductCatergories = productCatergories.Collection();
@@ -65,7 +71,7 @@ namespace Chelsea.uii.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(Product product, string Id)
+        public ActionResult Edit(Product product, string Id, HttpPostedFileBase file)
         {
             Product productToEdit = context.Find(Id);
             if (productToEdit == null)
@@ -78,15 +84,21 @@ namespace Chelsea.uii.Controllers
                 {
                     return View(product);
                 }
+                if (file != null)
+                {
+                    productToEdit.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//" + productToEdit.Image));
+                }
                 productToEdit.Catergory = product.Catergory;
                 productToEdit.Description = product.Description;
-                productToEdit.Image = product.Image;
+
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
                 context.Commit();
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
@@ -116,4 +128,3 @@ namespace Chelsea.uii.Controllers
         }
     }
 }
-
