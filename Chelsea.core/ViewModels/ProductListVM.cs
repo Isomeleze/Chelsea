@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Chelsea.core.ViewModels
 {
-    public class ProductVM
+    public class ProductListVM
     {
-        public Product Product { get; set; }
+        public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductCatergory> ProductCatergories { get; set; }
-        public IQueryable<ProductCatergory> ProductCatergory { get; set; }
     }
 }
-    

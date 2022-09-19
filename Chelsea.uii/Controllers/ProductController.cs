@@ -10,7 +10,7 @@ using Chelsea.core.ViewModels;
 using Chelsea.Data.AccessMemory;
 
 
-namespace Chelsea.uii.Controllers
+namespace Chelsea.ui.Controllers
 {
     public class ProductController : Controller
     {

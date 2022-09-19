@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.ui", "Chelsea.uii\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.ui.Tests", "Chelsea.uii.Tests\Chelsea.ui.Tests.csproj", "{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.core", "Chelsea.core\Chelsea.core.csproj", "{0B57CBD5-6152-462B-B877-BFCB6E44F190}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E08FC8E0-1DCA-44BE-BC4D-FC01526C4527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
