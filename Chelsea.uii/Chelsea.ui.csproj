@@ -275,10 +275,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chelsea.core\Chelsea.core.csproj">
-      <Project>{0b57cbd5-6152-462b-b877-bfcb6e44f190}</Project>
-      <Name>Chelsea.core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Chelsea.Data.AccessMemory\Chelsea.Data.AccessMemory.csproj">
       <Project>{b1ed69c9-9d55-4766-81c6-adddc1fceb5e}</Project>
       <Name>Chelsea.Data.AccessMemory</Name>

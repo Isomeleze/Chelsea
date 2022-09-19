@@ -11,7 +11,6 @@ namespace Chelsea.core.ViewModels
     {
         public Product Product { get; set; }
         public IEnumerable<ProductCatergory> ProductCatergories { get; set; }
-        public IQueryable<ProductCatergory> ProductCatergory { get; set; }
+
     }
 }
-    

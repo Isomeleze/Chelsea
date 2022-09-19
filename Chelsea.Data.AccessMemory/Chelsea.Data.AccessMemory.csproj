@@ -52,11 +52,5 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Chelsea.core\Chelsea.core.csproj">
-      <Project>{0b57cbd5-6152-462b-b877-bfcb6e44f190}</Project>
-      <Name>Chelsea.core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

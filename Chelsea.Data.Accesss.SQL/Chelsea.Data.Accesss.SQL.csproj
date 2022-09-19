@@ -63,12 +63,6 @@
     <Compile Include="SQLRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chelsea.core\Chelsea.core.csproj">
-      <Project>{0B57CBD5-6152-462B-B877-BFCB6E44F190}</Project>
-      <Name>Chelsea.core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

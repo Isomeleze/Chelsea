@@ -22,7 +22,6 @@ namespace Chelsea.uii.Controllers
             productCatergories = catergoryContext;
         }
         // GET: Product
-        // GET: Product
         public ActionResult Index()
         {
             List<Product> products = context.Collection().ToList();

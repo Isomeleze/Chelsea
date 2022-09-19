@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.core", "Chelsea.core\Chelsea.core.csproj", "{0B57CBD5-6152-462B-B877-BFCB6E44F190}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.services", "Chelsea.services\Chelsea.services.csproj", "{649FF05C-7C3C-4516-9F08-314E1CC031AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelsea.Data.AccessMemory", "Chelsea.Data.AccessMemory\Chelsea.Data.AccessMemory.csproj", "{B1ED69C9-9D55-4766-81C6-ADDDC1FCEB5E}"
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B57CBD5-6152-462B-B877-BFCB6E44F190}.Release|Any CPU.Build.0 = Release|Any CPU
 		{649FF05C-7C3C-4516-9F08-314E1CC031AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{649FF05C-7C3C-4516-9F08-314E1CC031AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649FF05C-7C3C-4516-9F08-314E1CC031AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
